@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+    "core",
+    "package-dir",
+    "frontmatter",
+    "app/src-tauri",
+]

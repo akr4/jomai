@@ -1,0 +1,79 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Jomai",
+    "version": "0.3.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "shell": {
+        "open": "^file://|^https://jomai\\.app/|^https://jomai-artifacts-382046072211\\.s3\\.ap-northeast-1\\.amazonaws\\.com/"
+      },
+      "dialog": {
+        "open": true
+      },
+      "clipboard": {
+        "writeText": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "Productivity",
+      "copyright": "Jomai",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "app.jomai.jomai",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://jomai.app/updates.json"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNCQkJEMTU5NjE4QkYxNTUKUldSVjhZdGhXZEc3Tzkxc2d3Q0pDNEpzMkxQWUFtM1lTclVlc2VITXcraXJPMlRRSUl6ck04OEgK"
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 600,
+        "resizable": true,
+        "title": "Jomai",
+        "width": 800,
+        "visible": true
+      }
+    ]
+  }
+}

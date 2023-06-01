@@ -1,0 +1,9 @@
+accepted = [
+    "Apache-2.0",
+    "MIT",
+    "CC0-1.0",
+]
+
+ignore-build-dependencies = true
+ignore-dev-dependencies = true
+ignore-transitive-dependencies = true

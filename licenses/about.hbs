@@ -1,0 +1,399 @@
+<html>
+
+<head>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #333;
+        color: white;
+      }
+
+      a {
+        color: skyblue;
+      }
+    }
+
+    h3 {
+      font-size: 1.25em;
+    }
+
+    h4 {
+      margin-bottom: 16px;
+    }
+
+    .container {
+      font-family: sans-serif;
+      padding: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .license {
+      margin-top: 18px;
+    }
+
+    .licenses-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .license-used-by {
+      margin-top: -10px;
+      margin-bottom: 12px;
+    }
+
+    .license-text {
+      font-size: small;
+      max-height: 200px;
+      overflow-y: scroll;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+<main class="container">
+  <div class="intro">
+    <h1>Third Party Licenses</h1>
+    <p>This page lists the licenses of the projects used in Jomai.</p>
+  </div>
+
+  <h2>All license text:</h2>
+  <ul class="licenses-list">
+    {{#each licenses}}
+      <li class="license">
+        <h3 id="{{id}}">{{name}}</h3>
+        <h4>Used by:</h4>
+        <ul class="license-used-by">
+          {{#each used_by}}
+            <li><a href="{{#if
+                crate.repository}} {{crate.repository}} {{else}} https://crates.io/crates/{{crate.name}} {{/if}}">{{crate.name}} {{crate.version}}</a>
+            </li>
+          {{/each}}
+        </ul>
+        <pre class="license-text">{{text}}</pre>
+      </li>
+    {{/each}}
+
+    <li class="license">
+      <h3 id="vibrato">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/daac-tools/vibrato">vibrato (0.2.0)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) 2022 legalforce-research
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/stopwords-iso/stopwords-en">stopwords-en (0.3.0)</a></li>
+        <li><a href="https://github.com/stopwords-iso/stopwords-ja">stopwords-ja (0.2.0)</a></li>
+      </ul>
+      <pre class="license-text">The MIT License (MIT)
+
+Copyright (c) 2016 Gene Diaz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/chakra-ui/chakra-ui/">Chakra UI (2.2.4)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) 2019 Segun Adebayo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/emotion-js/emotion">emotion-react (11.9.3)</a></li>
+        <li><a href="https://github.com/emotion-js/emotion">emotion-styled (11.9.3)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) Emotion team and other contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/FortAwesome/react-fontawesome">react-fontawesome (0.2.0)</a></li>
+      </ul>
+      <pre class="license-text">Copyright 2018 Fonticons, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/lukeed/clsx">clsx (1.2.1)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) Luke Edwards &lt;luke.edwards05@gmail.com&gt; (lukeed.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/iamkun/dayjs">dayjs (1.11.4)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) 2018-present, iamkun
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/i18next/i18next">i18next (21.9.1)</a></li>
+        <li><a href="https://github.com/i18next/react-i18next">react-i18next (11.18.5)</a></li>
+        <li><a href="https://github.com/i18next/i18next-browser-languageDetector">i18next-browser-languageDetector
+          (6.1.5)</a></li>
+      </ul>
+      <pre class="license-text">The MIT License (MIT)
+
+Copyright (c) 2022 i18next
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/facebook/react">React (18.2.0)</a></li>
+        <li><a href="https://github.com/facebook/react">react-dom (18.2.0)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) Facebook, Inc. and its affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/TanStack/query">react-query (3.39.2)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) 2021 Tanner Linsley
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+    <li class="license">
+      <h3 id="MIT-stopwords-iso">MIT License</h3>
+      <h4>Used by:</h4>
+      <ul class="license-used-by">
+        <li><a href="https://github.com/petyosi/react-virtuoso">react-virtuoso (2.19.0)</a></li>
+      </ul>
+      <pre class="license-text">MIT License
+
+Copyright (c) 2020 Petyo Ivanov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+    </li>
+
+  </ul>
+</main>
+</body>
+
+</html>

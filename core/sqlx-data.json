@@ -1,0 +1,403 @@
+{
+  "db": "SQLite",
+  "004c35a599eb951dfb9dab2b29fdd51b5fb50732116d14353d8342f562faac47": {
+    "query": "\nselect id, path, status, created_at\nfrom watches\nwhere path = $1\n",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "path",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "status",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "created_at",
+          "ordinal": 3,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": [
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "204b853d359efec6f53c605136c8b70ddbdc460e7b5f7aa518a99875bd7d59a3": {
+    "query": "delete from jobs where id = $1",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": []
+    }
+  },
+  "42a25d48aa12f9f7ebd2ce8d1e1dbf2fddacfe5b976310d083c80355356d959d": {
+    "query": "\nupdate documents\nset indexed_at = $1\nwhere path = $2\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 2
+      },
+      "nullable": []
+    }
+  },
+  "4545de5b40f0f0e0d3086cc22983e98bc940b47ae1b10e05c76094007486959c": {
+    "query": "\nupdate jobs\nset status = $2,\nstarted_at = $3\nwhere id = $1\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 3
+      },
+      "nullable": []
+    }
+  },
+  "47c649747a4484b2b4cae1e08c9ad9be9c4af8ca2a39fb66bc826e369f9932e8": {
+    "query": "\nselect id, path, status, created_at\nfrom watches\nwhere id = $1\n",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "path",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "status",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "created_at",
+          "ordinal": 3,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": [
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "5047beba68a44c46a2eca52be3d9458bca292c5febee7a398e08af56cf175a59": {
+    "query": "\ndelete from documents where watch_id = $1\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": []
+    }
+  },
+  "8849430025a0df8e62f8d7bf7c779d246d61333dec6a22ad1bd85932fea200ac": {
+    "query": "\ndelete from documents where path = $1\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": []
+    }
+  },
+  "8bc14b52d63becc78c4c784fcefcd8ea9ab818f59e816737dd78fb2dd79248ef": {
+    "query": "\ninsert into jobs\n(job_type, watch_id, status, created_at, started_at)\nvalues ($1, $2, 'pending', $3, $4)\nreturning id\n",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        }
+      ],
+      "parameters": {
+        "Right": 4
+      },
+      "nullable": [
+        false
+      ]
+    }
+  },
+  "95c18dd57b7c94142a7741175380f90cd26727f224ded5206b45137bdd4fdc66": {
+    "query": "\n insert into watches (path, status) values ($1, 'adding')\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": []
+    }
+  },
+  "a14fdfbb0b4251e6cc090d8ab5029508d89ed3753af2d1fc5207e720fb931d0d": {
+    "query": "\ndelete from watches where id = $1\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": []
+    }
+  },
+  "a26bc245a066cf6c6d9062320680d0b0ec02895e0019b03ae69990fcdec2c05e": {
+    "query": "\nselect * from watches order by created_at\n",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "path",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "status",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "created_at",
+          "ordinal": 3,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 0
+      },
+      "nullable": [
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "b69c64b7ddb0e90adcdbccced74c95e0e793371807de488d7a50324d51eec08b": {
+    "query": "\ndelete from jobs\nwhere watch_id = $1\n  and status = 'pending'\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": []
+    }
+  },
+  "b755d82cbf95f044c2415f559e27fec2ed5e2e7270d03b6910631c0b97d89951": {
+    "query": "\ninsert into documents (path, watch_id, indexed_at) values ($1, $2, $3)\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 3
+      },
+      "nullable": []
+    }
+  },
+  "c8b8e2868ba81d207354b088d17f0349bc32556c37fc409761538d693ab7083f": {
+    "query": "select * from jobs where id = $1",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "job_type",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "watch_id",
+          "ordinal": 2,
+          "type_info": "Int64"
+        },
+        {
+          "name": "status",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "created_at",
+          "ordinal": 4,
+          "type_info": "Datetime"
+        },
+        {
+          "name": "started_at",
+          "ordinal": 5,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "ca940b49fa03aa9bd40cd1ccdc0851de0ad5734bfdaea4a7ad85446cad38c0ae": {
+    "query": "select * from jobs order by created_at",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "job_type",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "watch_id",
+          "ordinal": 2,
+          "type_info": "Int64"
+        },
+        {
+          "name": "status",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "created_at",
+          "ordinal": 4,
+          "type_info": "Datetime"
+        },
+        {
+          "name": "started_at",
+          "ordinal": 5,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 0
+      },
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "d0efb5c1933b169d914cee3ac1e93e423acf696295d08aa1e5eea5a4caa3d900": {
+    "query": "\nupdate watches set status = $1 where id = $2\n",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 2
+      },
+      "nullable": []
+    }
+  },
+  "ddcbc7f8c235ae6592d6c7bd2c0a648ed5368940ad5c1fa85433b3905d7ced20": {
+    "query": "\nselect id, path, watch_id, created_at, indexed_at\nfrom documents\nwhere path = $1\n",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "path",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "watch_id",
+          "ordinal": 2,
+          "type_info": "Int64"
+        },
+        {
+          "name": "created_at",
+          "ordinal": 3,
+          "type_info": "Datetime"
+        },
+        {
+          "name": "indexed_at",
+          "ordinal": 4,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    }
+  },
+  "f40b58ae8b2f2ec24c023bffc2ecf4e8af93196e1f11f54803468031f1ac1392": {
+    "query": "\nselect id, path, status, created_at\nfrom watches\nwhere $1 like path || '%'\n",
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "path",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "status",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "created_at",
+          "ordinal": 3,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": [
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  }
+}
